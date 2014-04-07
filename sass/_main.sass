@@ -1,2 +1,590 @@
-// Normally mainpage styles
- 
+// hero
+.hero
+	position: relative
+	padding: 75px 0 0 472px 
+	height: 583px
+	overflow: hidden
+	background: url('../img/top-bg.png') 
+	+box
+	+clr
+
+.hero__item
+	width: 258px
+
+//title-block
+.title-block
+	p
+		padding: 34px 12px 0 0
+	h1
+		font-size: 43.95px
+	h2
+		font-size: 37.8px
+
+// top-l
+.top-l
+	padding: 20px 20px 0
+	overflow: hidden
+	+gh(#e0dedd, #f3f2f2)
+	.menu 
+		display: inline-block
+	.input
+		float: right
+		padding: 0
+		width: 293px
+		
+// hero__menu
+.menu 
+	font-size: 0
+	font-family: 'Roboto Condensed', sans-serif 
+	li
+		position: relative
+		z-index: 2
+		display: inline-block
+		a
+			position: relative
+			padding: 22px 36px 22px 28px 
+			width: 100%
+			height: 100%
+			color: #333
+			text-align: left
+			vertical-align: middle
+			text-decoration: none 
+			display: block
+			+transition(0.2s)
+			+box
+			span
+				font-size: 20px
+				line-height: 1
+				text-transform: uppercase
+			&:before
+				position: absolute
+				content: ''
+				border-color: rgba(#ffd42d, 0.0) 
+				+transition(0.2s)
+		&:hover
+			a
+				background: #FFF 
+				+transition(0.2s)
+				&:before
+					position: absolute
+					content: ''
+					right: 0
+					top: 0
+					+transition(0.2s)
+					+arr(28, 28, #ffd42d, tr)
+		&.is-active
+			a
+				background: #FFF 
+				&:before
+					position: absolute
+					content: ''
+					right: 0
+					top: 0
+					+arr(28, 28, #ffd42d, tr)
+			&:before
+				position: absolute
+				content: ''
+				bottom: -45px
+				right: 6px
+				width: 93%
+				height: 60px
+				z-index: -1
+				+border_radius(60px 60px 0 0)
+				+box-shadow(0 0 65px #000)
+				
+// hero__menu
+.hero__menu
+	position: absolute
+	bottom: 0
+	font-size: 0
+	li
+		a
+			&:before
+				position: absolute
+				content: ''
+				right: 0
+				top: 0
+				+transition(0.2s)
+				+arr(28, 28, #373838, tr)
+			.t4, .t5
+				line-height: 1.2 !important
+				
+// carusel
+.carusel
+	position: relative
+	text-align: center
+	border-bottom: 1px solid #E8E8E8 
+	.cycle-slideshow
+		margin: 0 auto
+	.cycle__nav
+		position: absolute
+		top: 50%
+		margin-top: -37.5px 
+		+s(pref-c)
+		&:hover
+			opacity: 0.7 
+	.cycle__nav_prev, .cycle__nav_prev2
+		left: 30px
+	.cycle__nav_next, .cycle__nav_next2
+		right: 30px
+		+rotate(180, deg)
+	.btn
+		margin-bottom: -1px
+		
+//slider
+.slider
+	.cycle-slideshow
+		.cycle-pager
+			position: absolute
+			bottom: 50px
+			left: 476px
+			z-index: 200
+			display: inline-block
+			button
+				margin-right: 14px
+				width: 18px
+				height: 18px
+				cursor: pointer
+				background: #E0E0E0
+				+box-shadow(inset 0 1px 3px #aeaeae) 
+				+border-radius(50%)
+				&.is-active
+					background: #0075BE 
+					+box-shadow(none)
+	.cycle__item
+		width: 1200px
+		padding: 126px 100px 0 472px
+		height: 462px
+		background: url('../img/arr1.png') 
+		+box
+		.btn
+			position: absolute
+			right: 100px
+			bottom: 37px
+			
+.slider_desc
+	position: relative
+	padding: 40px 0 0 40px
+	width: 501px
+	.cycle-slideshow
+		height: 510px
+		.cycle-pager
+			left: 170px
+			bottom: 40px
+
+.slider_col
+	.cycle-slideshow
+		width: 100% 
+		.cycle-pager
+			bottom: 0
+	.cycle__col
+		height: 430px
+		width: 100%
+		img
+			margin: 0 auto
+			display: block
+	.cycle__nav
+		position: absolute
+		top: 50%
+		margin-top: -37.5px
+		z-index: 200  
+		+s(pref-c)
+		&:hover
+			opacity: 0.7 
+	.cycle__nav_prev, .cycle__nav_prev2
+		left: 30px
+	.cycle__nav_next, .cycle__nav_next2
+		right: 30px
+		+rotate(180, deg)
+		
+// article
+.article
+	+clr
+
+.article__top
+	padding: 86px 100px 0
+	height: 152px
+	background: url('../img/art-bg.png') 
+	+box 
+	.t3_left, .t3_right
+		display: inline-block
+		
+.left
+	float: left
+	
+.right
+	float: right
+	
+.article__field
+	position: relative
+	padding: 46px 100px 0 
+	+clr
+	a, p
+		line-height: 1.2
+		font-size: 13px 
+		font-family: 'Roboto', sans-serif
+	a
+		padding-top: 4px
+		color: #0075BE 
+		display: inline-block
+		
+.article__news
+	padding-right: 40px
+	a
+		line-height: 1.3
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+			
+.article__row
+	margin-bottom: 25px
+	
+.article__item
+	h3
+		padding-bottom: 10px
+		font-size: 16px
+		font-weight: normal
+		line-height: 1.2
+	a
+		&:hover
+			text-decoration: nones
+	.btn
+		position: absolute
+		right: 100px
+		bottom: 0
+		
+
+
+
+// page catalog
+
+// collection
+.collection
+	margin-top: 60px 
+	
+.collection__title
+	margin-bottom: 4px
+	padding: 15px 0 22px 70px 
+	text-align: left
+	border-bottom: 1px solid #e4e4e4
+	h1
+		font-size: 30px
+		
+.collection__row
+	padding: 0 0 0 15px
+	font-size: 0
+	text-align: center
+	.btn
+		margin: 10px auto 0
+		
+.collection__col
+	position: relative
+	margin-right: 15px
+	min-height: 514px
+	color: #333
+	text-align: left
+	vertical-align: top
+	text-decoration: none
+	display: inline-block
+	+transition(0.2s)
+	.img
+		margin: 0 27px 
+		border-bottom: 1px solid #e4e4e4
+	&:before
+		position: absolute
+		content: "" 
+		top: -0.8px
+		left: -0.1px
+		width: 99.8%
+		min-height: 99.8%
+		border: 1px solid #f0f0f0
+		display: none
+		+border-radius(20px)
+		+transition(0.2s)
+		+box-shadow(0 0 12px -2px #dfd7d7) 
+	&:after
+		position: absolute
+		content: ''
+		right: -1px
+		top: -1px
+		z-index: 2
+		display: none
+		+transition(0.2s)
+		+arr(28, 28, #ffd42d, tr)
+	&:hover
+		+transition(0.2s)
+		&:before
+			display: block
+			+transition(0.2s)
+		&:after
+			display: block
+			+transition(0.2s)
+		.collection__price
+			color: #FFF 	
+			background: #373838 
+			+transition(0.2s)
+		.collection__description
+			display: block
+			+transition(0.2s)
+		.collection__cost
+			&:before
+				+si(cost2)
+
+.collection__field
+	position: relative
+	background: #FFF
+	z-index: 2 
+	
+.collection__price	
+	padding: 22px 25px 15px 25px  
+	font-size: 20px
+	+transition(0.2s)
+	h2
+		font-size: 20px
+		
+.collection__cost
+	position: relative
+	padding-left: 24px
+	&:before
+		position: absolute
+		content: ""
+		top: 5px
+		left: -1px
+		+s(cost)
+		 
+.collection__description
+	padding: 15px 25px  
+	font-size: 13px
+	display: none
+	+transition(0.2s)
+
+.collection__block
+	padding: 50px 100px 38px
+	border-bottom: 1px solid #e8e8e8
+	p
+		padding-top: 10px
+	h1
+		font-size: 36px
+	h2
+		font-size: 16px
+		padding: 5px 0 10px
+		
+
+
+// page item
+
+
+
+//goods
+.goods
+	font-family: 'Roboto Condensed', sans-serif 
+	+clr
+	.collection__title
+		h2
+			font-size: 36px
+
+.gools__row
+	padding: 28px 0 26px 0
+	border-top: 1px solid #F2F1F1 
+	h1
+		font-size: 36px
+		margin-bottom: 12px
+	.collection__cost
+		font-size: 24px
+	a
+		font-size: 16px
+		color: #0075BE
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	p
+		padding-bottom: 8px
+		font-family: 'Roboto', sans-serif
+
+.gools__row_h
+	h1, h2
+		padding-left: 100px
+
+.gools__row_pr
+	padding-right: 70px
+
+.gools__row_pad
+	padding: 40px 100px 0
+	.t5
+		padding-bottom: 12px
+	a
+		font-size: 13px
+		text-decoration: underline
+		&:hover
+			text-decoration: none
+
+.gools__item
+	font-size: 16px
+	span
+		padding: 0 6px 
+	.dools__grey-it
+		padding: 0
+		width: 108px
+		color: #969a9a 
+		display: inline-block
+.gools__item_top
+	margin-bottom: 30px
+	
+.span_blue
+	color: #0075BE 
+
+// list
+.list
+	padding: 0 0 10px 6px 
+	i
+		padding-right: 5px
+		font-style: normal
+		font-size: 15px
+
+// table
+.table
+	margin: 24px 0 60px 0
+	tr
+		th, td
+			text-align: left
+			border: 1px solid #F2F1F1 
+			vertical-align: middle
+			+box
+			&:first-child
+				padding-left: 30px
+				width: 577px
+		th
+			height: 56px
+			font-size: 16px
+			text-transform: uppercase
+			font-weight: normal
+			font-family: 'Roboto Condensed', sans-serif 
+			&:nth-child(2)
+				padding-left: 67px
+			&:last-child
+				padding-left: 74px
+		td
+			height: 39px
+			&:nth-child(2)
+				padding-left: 72px
+				width: 182px
+			&:last-child
+				padding-left: 78px
+				
+//form
+.form
+	margin: 0 0 90px 260px 
+	h3
+		margin-bottom: 22px
+	.input
+		width: 224px
+		vertical-align: top
+		font-family: 'Roboto Condensed', sans-serif
+		display: inline-block
+		input
+			font-size: 16px
+	textarea
+		padding: 19px 
+		width: 442px
+		min-height: 110px
+		font-size: 16px
+		font-family: 'Roboto Condensed', sans-serif
+		resize: none
+		border: 1px solid #f2f1f1
+		background: #FFF 
+		+placeholder-color(#858585) 
+		+box
+		&:focus
+			+placeholder
+				font-size: 0 
+.form__field_btn
+	padding: 10px 0 0
+	vertical-align: top
+	.btn
+		margin-right: 9px
+		padding: 0 !important
+		line-height: 43px
+		width: 215px
+		height: 43px
+		text-align: center
+		vertical-align: top
+		+box				
+	.btn_yellow
+		position: relative
+		&:before
+			position: absolute
+			content: ''
+			top: 50%
+			right: 16px
+			margin-top: -6px 
+			+s(btn-pic)
+
+// select
+.select
+	min-width: 152px
+	height: 51px
+	position: relative
+	padding: 0 17px 0
+	font-size: 16px
+	font-family: 'Roboto Condensed', sans-serif
+	border: 1px solid #F2F1F1 
+	cursor: pointer
+	font-weight: normal
+	&.is-active
+		+box-shadow( 0 2px 5px #c4c4c4)
+		.select__list
+			display: block
+		.select__text
+			&:before
+				+rotate(180, deg)
+.select__text
+	position: relative
+	padding-right: 24px
+	color: #858585 
+	line-height: 52px
+	font-weight: 400
+	font-size: 16px 
+	display: block
+	&:before
+		position: absolute
+		content: ''
+		top: 50%
+		right: 0
+		margin-top: -3px
+		+arr(10, 6, #858585, b)
+.select__list
+	position: absolute
+	top: 52px
+	left: 0
+	right: 0
+	color: #858585 
+	font-weight: normal
+	z-index: 100
+	display: none
+	background: #FFF 
+	+box-shadow( 0 2px 5px #c4c4c4)
+	li
+		margin: 0 11px 
+		padding: 0 6px 
+		height: 38px
+		line-height: 38px
+		border-top: 1px solid #e9e9e9 
+		&:hover
+			background: #ffd42d
+			+transition(0.2s)
+
+.google-map
+	width: 100%
+	height: 710px
+	.google-map__in
+		width: 100%
+		height: 710px
+
+.google-map__window
+	width: 200px
+	height: 200px
+	background: #000
+.gm-style-iw + div
+	display: none
+.gm-style-iw
+	background: #0075be !important 

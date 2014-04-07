@@ -104,7 +104,13 @@ $w320: 320px
 
 =gh($color1, $color2)
 	+background-image(linear-gradient(left, $color1, $color2))
+	
+=gtr($color1, $color2)
+	+background-image(linear-gradient(top right, $color1, $color2))
 
+=gl($color1, $color2, $color3)
+	+background-image(linear-gradient(left, $color1, $color2, $color3)) 
+	 
 //asdfast font-family
 =font($alias, $name)
 	@font-face

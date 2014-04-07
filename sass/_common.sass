@@ -1,49 +1,260 @@
-// # SHORT HOWTO
-// ## Sprites
-//     .whatever
-//          +sized-sprite($icons, coderiver) //or
-// 			+s(codedby) //gets default value for spritemap as $icons
-// ### animation example
-//     +include keyframes(rotate)
-//        from
-//           +rotate(0)
-//        to
-//           +rotate(360)
-// ## animation usage
-//     body:hover
-// 	    +animation(rotate 200s linear infinite)
-// ## animations easing, see easings.net for full list and examples, tnx @ai
-//     transition: all 1.2s ceaser($ease-in)
-// ## gradient example
-//     +background-image(linear-gradient(#232323, #5c5c5c));
-//     +g(#232323, #5c5c5c);
-//	   horizontal
-//     +gh(#232323, #5c5c5c);
-// ## making bw-images
-//     img
-//			@extend %gray
-// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
-//     +min-screen(320)
-//			display: none
-// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
-//
-// ## use cycles
-//     @for $i from 1 through 3
-//       .item-#{$i}
-//			width: 2em * $i;
-//     @each $s in a,b,c
-// 	    	#{$s}
-//				display: none
-// ## fonts 
-// Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
-// =book
-// 	font-family: "book",arial,sans-serif 
-	
 body
-	font-size: 12px 
-	font-family: Arial, sans-serif 
+	font-size: 13px 
 	line-height: 1.4
+	color: #373838 
+	font-family: 'Roboto', sans-serif
+	background: url('../img/bg.jpg') 
 
 
 // common blocks
+.out
+	margin: 0 auto
+	width: 1200px
+	background: #FFF 
+	+box-shadow(0 0 12px #000)
+	+box
+
+//h
+h1, h2, h3, .t1, .t2, .t3, .t4, .t5
+	text-transform: uppercase
+	font-weight: normal
+	line-height: 1
+	font-family: 'Roboto Condensed', sans-serif 
+h1
+	font-size: 36px
+h2
+	font-size: 16px
+h3
+	font-size: 20px
+.t1
+	font-size: 43.95px
+.t2
+	font-size: 37.8px
+.t3
+	font-size: 36px
+.t4
+	font-size: 24px
+.t5
+	font-size: 16px
+
+// header
+.header
+	padding: 0 100px 
+	height: 76px
+	color: #fff 
+	background: #373838
+	+box 
+
+// logo
+.logo
+	float: left
+	margin-right: 155px
+	display: block
+	+s(logo)
+
+// header__menu
+.header__menu
+	float: left
+	font-size: 0
+	li
+		margin-right: 30px
+		display: inline-block
+		a
+			color: #FFF
+			font-size: 14px
+			text-decoration: none
+			line-height: 76px
+			text-transform: uppercase 
+			&:hover
+				color: #FFD42D 
+		
+// header__right
+.header__right
+	margin-top: 26px
+	padding-left: 25px
+	float: right
+
+//phone
+.phone
+	position: relative
+	font-size: 14px
+	&:before
+		position: absolute
+		content: ''
+		top: 2px
+		left: -25px
+		+s(phone)
+
+//mail
+.mail
+	color: #FFF
+	font-size: 13px
+	text-decoration: none
+	&:hover
+		color: #FFD42D 
+		text-decoration: underline 
+
+// date
+.date
+	color: #8C8C8C 
+	font-size: 11px
+
+// input
+.input
+	padding: 0 9px 9px 0
+	background: #FFF
+	+box 
+	input
+		padding: 19px 
+		height: 53px
+		width: 100%
+		font-family: 'Roboto Condensed', sans-serif 
+		border: 1px solid #f2f1f1
+		background: #FFF 
+		+placeholder-color(#858585) 
+		+box
+		&:focus
+			+placeholder
+				font-size: 0 
+
+.input_search
+	position: relative
+	z-index: 2
+	&:before
+		position: absolute
+		content: ""
+		top: 50%
+		right: 22px
+		margin-top: -8px
+		cursor: pointer
+		+s(search)
+	&:after
+		position: absolute
+		content: ''
+		bottom: -45px
+		right: 6px
+		width: 93%
+		height: 60px
+		z-index: -1
+		+border_radius(60px 60px 0 0)
+		+box-shadow(0 0 65px #000)
+	.input__field
+		padding: 7px 7px 4.1px 
+		background: #FFF 
+		
+// btn
+.btn
+	padding: 16px 30px !important
+	color: #fff !important
+	font-size: 16px !important
+	text-transform: uppercase
+	text-decoration: none !important
+	background: #0075BE !important
+	display: inline-block
+	+transition(0.2s) 
+	i
+		padding-left: 5px
+		font-style: normal
+		font-size: 21px
+		line-height: 1
+	&:hover
+		color: #333  !important
+		background: #ffd42d !important
+		+transition(0.2s) 
+
+.btn_yellow
+	padding: 16px 20px !important
+	color: #333 !important
+	background: #ffd42d  !important
+	&:hover	
+		color: #fff !important
+		background: #0075BE  !important
+
+.btn_tr
+	i
+		font-size: 20px
+		line-height: 0.6
+		vertical-align: text-top
+		display: inline-block
+		+rotate(90, deg)
+
+//breadcrumbs 
+.breadcrumbs
+	padding: 20px 0 
+	a
+		font-size: 13px
+		color: #0075BE
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+	i
+		padding: 0 5px 
+		color: #494949 
+		font-size: 16px
+		line-height: 1
+		font-style: normal
+		
+	.breadcrumbs__right
+		position: relative
+		float: right
+		padding-right: 44px
+		i
+			position: absolute
+			top: 0
+			left: -20px
+			line-height: 0.9
+			font-size: 18px
+
+// footer
+.footer
+	padding: 40px 100px 0 
+	height: 136px
+	border-top: 1px solid #E8E8E8 
+	font-family: 'Roboto', sans-serif
+	background: #f6f6f6
+	background: linear-gradient(to left, #fdfdfd 0%, #f6f6f6 50%, #fdfdfd 100%)
+	+box
+	a
+		color: #0075BE 
+		&:hover
+			color: #0075BE
+			text-decoration: none
+
+//footer__menu
+.footer__menu
+	float: left
+	li
+		margin-right: 25px
+		display: inline-block
+
+//footer__right
+.footer__right
+	float: right
+
+//footer__contact
+.footer__contact
+	text-align: right
+	.mail
+		padding-left: 25px
+		&:hover
+			text-decoration: underline
+	.phone
+		display: inline-block
+		&:before
+			top: 4px
+			left: -22px
+			+s(phone-f)
+		
+// copyright
+.copyright
+	margin-top: 15px
+	color: #4D4E4E 
+	font-size: 12px
+	a
+		text-transform: uppercase
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+
+.breadcrumbs_pl
+	padding-left: 100px

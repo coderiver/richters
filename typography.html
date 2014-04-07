@@ -1,0 +1,183 @@
+<!doctype html>
+<!--[if lte IE 8]><html class="lteie8"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="initial-scale=1"/>
+	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.js"></script>
+	<script src="js/cycle.js"></script>
+	<script src="js/jquery.cycle2.carousel.min.js"></script>
+	<script src="js/common.js"></script>
+</head>
+<body>
+
+<!-- BEGIN  out-->
+<div class="out">
+
+	<!-- BEGIN  header-->
+	<header class="header">
+		<a href="#" class="logo"></a>
+		<ul class="header__menu">
+			<li><a href="#">О марке</a></li>
+			<li><a href="#"> Коллекции</a></li>
+			<li><a href="#">Где купить?</a></li>
+			<li><a href="#">Контакты</a></li>
+		</ul>
+		<div class="header__right">
+			<div class="phone">+7 495 58 678 87</div>
+			<a href="mailto:info@richter.ru" class="mail">info@richter.ru</a>
+		</div>
+	</header>
+	<!-- END header-->
+	<div class="google-map">
+		<div id="map-canvas" class="google-map__in"></div>
+	</div>  
+	<script>
+	  	function initialize() {
+		    var mapOptions = {
+		      	zoom: 12,
+		      	center: new google.maps.LatLng(55.749482, 37.731846),
+		      	disableDefaultUI: true,
+		      	scrollwheel: false,
+		     	zoomControl: true,
+		    	zoomControlOptions: {
+		        	style: google.maps.ZoomControlStyle.DEFAULT,
+		        	position: google.maps.ControlPosition.LEFT_CENTER
+		      	},
+		      	mapTypeId: google.maps.MapTypeId.ROADMAP,
+
+		    }
+		    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		    var image = 'img/icons/marker.png';
+		   var myLatLng1 = new google.maps.LatLng(55.739482, 37.894566);
+		   	var myLatLng2 = new google.maps.LatLng(55.729722, 37.623456);
+		   	var myLatLng3 = new google.maps.LatLng(55.739822, 37.794446);
+		   	var myLatLng4 = new google.maps.LatLng(55.737522, 37.595546);
+		   	var myLatLng5 = new google.maps.LatLng(55.736532,37.871666);
+		    var marker1 = new google.maps.Marker({
+			      position: myLatLng1,
+			      map: map,
+			      title: 'Магазин “Детский Мир”', 
+			      icon: image
+			});
+			var marker2 = new google.maps.Marker({
+			      position: myLatLng2,
+			      map: map,
+			      title: 'Магазин “Детский Мир”', 
+			      icon: image
+			});
+			var marker3 = new google.maps.Marker({
+			      position: myLatLng3,
+			      map: map,
+			      title: 'Магазин “Детский Мир”', 
+			      icon: image
+			});
+			var marker4 = new google.maps.Marker({
+			      position: myLatLng4,
+			      map: map,
+			      title: 'Магазин “Детский Мир”', 
+			      icon: image
+			});
+			var marker5 = new google.maps.Marker({
+			      position: myLatLng5,
+			      map: map,
+			      title: 'Магазин “Детский Мир”', 
+			      icon: image
+			});
+			var contentString1 =	'<div class="google-map__window">'
+					+'<p><span>5</span>Участников</p>'
+					+'<p><span>16</span>Проголосовавших</p>'
+				'</div>';
+
+			var contentString2 =	'<div class="google-map__window">'
+					+'<p><span>5</span>Участников</p>'
+					+'<p><span>16</span>Проголосовавших</p>'
+				'</div>';
+
+			var contentString3 =	'<div class="google-map__window">'
+					+'<p><span>5</span>Участников</p>'
+					+'<p><span>16</span>Проголосовавших</p>'
+				'</div>';
+
+	    var contentString4 =	'<div class="google-map__window">'
+				+'<p><span>5</span>Участников</p>'
+				+'<p><span>16</span>Проголосовавших</p>'
+			'</div>';
+	    var contentString5 =	'<div class="google-map__window">'
+				+'<p><span>5</span>Участников</p>'
+				+'<p><span>16</span>Проголосовавших</p>'
+			'</div>';
+			var infowindow1 = new google.maps.InfoWindow({
+			    content: contentString1
+			});
+			var infowindow2 = new google.maps.InfoWindow({
+			    content: contentString2
+			});
+			var infowindow3 = new google.maps.InfoWindow({
+			    content: contentString3
+			});
+		  var infowindow4 = new google.maps.InfoWindow({
+			    content: contentString4
+			});
+		  var infowindow5 = new google.maps.InfoWindow({
+			    content: contentString5
+			});
+			google.maps.event.addListener(marker1, 'click', function(){
+			    infowindow1.open(map,marker1);
+			});
+			google.maps.event.addListener(marker2, 'click', function(){
+			    infowindow2.open(map,marker2);
+			});
+			google.maps.event.addListener(marker3, 'click', function(){
+			    infowindow3.open(map,marker3);
+			});
+			google.maps.event.addListener(marker4, 'click', function(){
+			    infowindow4.open(map,marker4);
+			});
+			google.maps.event.addListener(marker5, 'click', function(){
+			    infowindow5.open(map,marker5);
+			});
+			
+
+		}
+	  	// Asynchronous Loading
+		function loadScript() {
+		  var script = document.createElement('script');
+		  script.type = 'text/javascript';
+		  script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&language=ru&' +
+		      'callback=initialize';
+		  document.body.appendChild(script);
+		}
+		window.onload = loadScript;
+	</script>
+
+	<!-- BEGIN .footer -->
+	<footer class="footer">
+		<ul class="footer__menu">
+			<li><a href="#">О марке</a></li>
+			<li><a href="#">Коллекции</a></li>
+			<li><a href="#">Где купить?</a></li>
+			<li><a href="#">Новости</a></li>
+			<li><a href="#">Статьи</a></li>
+			<li><a href="#">Контакты</a></li>            
+		</ul>
+		<div class="footer__right">
+			<div class="footer__contact">
+				<div class="phone">+7 495 58 678 87
+					<a href="mailto:info@richter.ru" class="mail">info@richter.ru</a>
+				</div>
+			</div>
+			<div class="copyright">Copyright 2014 Richter   Создание и продвижение сайта: <a href="#">ADV Creative</a></div>
+		</div>
+	</footer>
+	<!-- END .footer -->
+</div>
+<!-- END out-->
+
+</body>
+</html>
